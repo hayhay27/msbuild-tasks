@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
+    <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
+    <Version>1.0.19</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Framework" Version="16.9.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.9.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="build\DockerfileTasks.props" PackagePath="build\" />
+    <Content Include="build\DockerfileTasks.targets" PackagePath="build\" />
+    <Content Include="buildMultiTargeting\DockerfileTasks.props" PackagePath="buildMultiTargeting\" />
+    <Content Include="buildMultiTargeting\DockerfileTasks.targets" PackagePath="buildMultiTargeting\" />
+  </ItemGroup>
+
+  <Import Project="..\DockerfileTasks.Shared\DockerfileTasks.Shared.projitems" Label="Shared" />
+  
+</Project>

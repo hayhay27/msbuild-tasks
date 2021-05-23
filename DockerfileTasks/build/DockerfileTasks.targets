@@ -1,0 +1,9 @@
+<Project>
+  <Target Name="_DockerfileUpdate" BeforeTargets="PrepareForBuild">
+    <DockerfileUpdate DockerfileName="$(DockerfileName)"
+                      StartToken="$(DockerfileStartToken)"
+                      EndToken="$(DockerfileEndToken)"
+                      SolutionFile="$(SolutionFile)"
+                      DockerfileContext="$(DockerfileContext)"/>
+  </Target>
+</Project>

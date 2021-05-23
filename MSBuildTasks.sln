@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerfileTasks", "DockerfileTasks\DockerfileTasks.csproj", "{19D016E5-E332-4022-B800-8D12F13D8BAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{F81B6582-8FF7-4244-92AE-3A17B2BBC556}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerfileTasks.UnitTests", "DockerfileTasks.UnitTests\DockerfileTasks.UnitTests.csproj", "{AFA6F6C2-AFB4-47AC-9D10-29211776FD64}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DockerfileTasks.Shared", "DockerfileTasks.Shared\DockerfileTasks.Shared.shproj", "{AC40131D-42C9-4D66-93B0-7F9E02A216A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dockerfile", "Dockerfile", "{837C65AC-685F-48E2-9E00-D700E7404AEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D299BEC3-D614-4F00-BBAB-EF51C7D465CC}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DockerfileTasks.Shared\DockerfileTasks.Shared.projitems*{19d016e5-e332-4022-b800-8d12f13d8bab}*SharedItemsImports = 5
+		DockerfileTasks.Shared\DockerfileTasks.Shared.projitems*{ac40131d-42c9-4d66-93b0-7f9e02a216a1}*SharedItemsImports = 13
+		DockerfileTasks.Shared\DockerfileTasks.Shared.projitems*{afa6f6c2-afb4-47ac-9d10-29211776fd64}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19D016E5-E332-4022-B800-8D12F13D8BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D016E5-E332-4022-B800-8D12F13D8BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D016E5-E332-4022-B800-8D12F13D8BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D016E5-E332-4022-B800-8D12F13D8BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F81B6582-8FF7-4244-92AE-3A17B2BBC556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81B6582-8FF7-4244-92AE-3A17B2BBC556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81B6582-8FF7-4244-92AE-3A17B2BBC556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81B6582-8FF7-4244-92AE-3A17B2BBC556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA6F6C2-AFB4-47AC-9D10-29211776FD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA6F6C2-AFB4-47AC-9D10-29211776FD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA6F6C2-AFB4-47AC-9D10-29211776FD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA6F6C2-AFB4-47AC-9D10-29211776FD64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36CFB5D8-6B89-4884-A243-50617E861E2E}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19D016E5-E332-4022-B800-8D12F13D8BAB} = {837C65AC-685F-48E2-9E00-D700E7404AEF}
+		{AC40131D-42C9-4D66-93B0-7F9E02A216A1} = {837C65AC-685F-48E2-9E00-D700E7404AEF}
+		{AFA6F6C2-AFB4-47AC-9D10-29211776FD64} = {837C65AC-685F-48E2-9E00-D700E7404AEF}
+		{F81B6582-8FF7-4244-92AE-3A17B2BBC556} = {837C65AC-685F-48E2-9E00-D700E7404AEF}
+	EndGlobalSection
+EndGlobal

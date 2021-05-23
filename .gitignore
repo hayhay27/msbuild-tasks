@@ -1,0 +1,9 @@
+**/bin
+**/obj
+**/.idea
+**/.vs
+**/.vscode
+
+*.log
+*.nupkg
+*.DotSettings.user
