@@ -72,10 +72,13 @@ namespace DockerfileTasks.DockerfileTasks.Shared.Parsers
 
         private static IEnumerable<string> ProjectCopyDirectives(TaskContext ctx)
         {
-            yield return $"# CurrentDirectory: {ctx.ProjectDirectory}";
-            yield return $"# SolutionFile: {ctx.Solution.Path}";
-            yield return $"# Dockerfile: {ctx.DockerfileName}";
-            yield return $"# Context: {ctx.DockerfileContext}";
+            if (ctx.DumpProperties)
+            {
+                yield return $"# CurrentDirectory: {ctx.ProjectDirectory}";
+                yield return $"# SolutionFile: {ctx.Solution.Path}";
+                yield return $"# Dockerfile: {ctx.DockerfileName}";
+                yield return $"# Context: {ctx.DockerfileContext}";
+            }
             
             yield return $"COPY [\"{ctx.Solution.Path.GetPathRelativeTo(ctx.DockerfileContext)?.Replace('\\', '/')}\", \"./\"]";
             foreach (var project in ctx.Solution.Projects)

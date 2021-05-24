@@ -28,19 +28,19 @@ namespace DockerfileTasks.DockerfileTasks.Shared.Resolvers
             if (!Path.IsPathRooted(root))
                 return default;
             
-            var rootedPathSegments = Path.GetFullPath(path).TrimTrailingSeparator().Split(Path.DirectorySeparatorChar);
-            var rootedRelativeToSegments = Path.GetFullPath(root).TrimTrailingSeparator().Split(Path.DirectorySeparatorChar);
+            var pathSegments = Path.GetFullPath(path).TrimTrailingSeparator().Split(Path.DirectorySeparatorChar);
+            var rootSegments = Path.GetFullPath(root).TrimTrailingSeparator().Split(Path.DirectorySeparatorChar);
 
-            var pathStack = new Stack<string>(rootedPathSegments.Reverse());
-            var relativeToStack = new Stack<string>(rootedRelativeToSegments.Reverse());
+            var pathStack = new Stack<string>(pathSegments.Reverse());
+            var rootStack = new Stack<string>(rootSegments.Reverse());
 
-            while (pathStack.Count > 0 && relativeToStack.Count > 0)
+            while (pathStack.Count > 0 && rootStack.Count > 0)
             {
-                if (pathStack.Pop() != relativeToStack.Pop())
+                if (pathStack.Pop() != rootStack.Pop())
                     return default;
             }
 
-            return relativeToStack.Count > 0 ? default : pathStack.Aggregate(".", Path.Combine);
+            return rootStack.Count > 0 ? default : pathStack.Aggregate(".", Path.Combine);
         }
     }
 }

@@ -62,6 +62,9 @@ namespace DockerfileTasks.UnitTests
 
                 // not root
                 yield return new[] {"/etc/data/app/", "/var/log/", null};
+
+                yield return new[] {"/Users/hayhay/repos/msbuild-tasks/src/Test", "/Users/hayhay/repos/msbuild-tasks", "./src/Test"};
+                yield return new[] {"/Users/hayhay/repos/msbuild-tasks/src/Test", "/Users/hayhay/repos/msbuild-tasks", "./src/Test"};
             }
         }
     }

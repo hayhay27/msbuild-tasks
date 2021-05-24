@@ -11,5 +11,6 @@ namespace DockerfileTasks.DockerfileTasks.Shared
 
         public Solution Solution { get; set; } = default!;
         public string DockerfileContext { get; set; } = default!;
+        public bool DumpProperties { get; set; }
     }
 }

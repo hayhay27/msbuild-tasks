@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IM.DockerfileTasks" Version="0.1.0" />
+    <PackageReference Include="IM.DockerfileTasks" Version="0.1.2" />
   </ItemGroup>
   
   <Target Name="Test" AfterTargets="Build">

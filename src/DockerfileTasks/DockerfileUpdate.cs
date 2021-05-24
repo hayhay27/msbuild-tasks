@@ -15,6 +15,7 @@ namespace DockerfileTasks
             var logger = new Logger(Log);
             try
             {
+                
                 logger.LogLow("DockerfileName: \"{0}\"", DockerfileName);
                 logger.LogLow("StartToken: \"{0}\"", StartToken);
                 logger.LogLow("EndToken: \"{0}\"", EndToken);
@@ -34,7 +35,8 @@ namespace DockerfileTasks
                     StartToken = StartToken,
                     EndToken = EndToken,
                     Solution = solution!,
-                    DockerfileContext = contextRoot!
+                    DockerfileContext = contextRoot!,
+                    DumpProperties = DumpProperties
                 };
 
                 if (Dockerfile.TryParse(logger, ctx, out var dockerfile))
@@ -55,5 +57,7 @@ namespace DockerfileTasks
         public string EndToken { get; set; } = "#<<<COPY_CSPROJ<<<";
         public string? SolutionFile { get; set; } = default!;
         public string? DockerfileContext { get; set; } = default!;
+        
+        public bool DumpProperties { get; set; }
     }
 }
