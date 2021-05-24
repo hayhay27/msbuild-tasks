@@ -32,7 +32,7 @@ class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion] readonly GitVersion GitVersion;
+    [GitVersion(NoFetch = true, Framework = "net5.0")] readonly GitVersion GitVersion;
     [Parameter] readonly string NuGetApiKey;
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
@@ -80,7 +80,7 @@ class Build : NukeBuild
                 .SetInformationalVersion(GitVersion.InformationalVersion)
                 .EnableNoBuild());
         });
-    
+
     Target Push => _ => _
         .DependsOn(Pack)
         .Executes(() =>
@@ -90,8 +90,7 @@ class Build : NukeBuild
                 DotNetNuGetPush(s => s
                     .SetTargetPath(nuget)
                     .SetApiKey(NuGetApiKey)
-                    .SetSource())
+                    .SetSource("https://api.nuget.org/v3/index.json"));
             }
-
-        })
+        });
 }

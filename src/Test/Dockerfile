@@ -4,14 +4,7 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 #>>>COPY_CSPROJ>>>
-# CurrentDirectory: F:\sibur\dev\repos\DockerfileTasks\Test
-# SolutionFile: F:\sibur\dev\repos\DockerfileTasks\MSBuildTasks.sln
-# Dockerfile: F:\sibur\dev\repos\DockerfileTasks\Test\Dockerfile
-# Context: F:\sibur\dev\repos\DockerfileTasks
-COPY ["./MSBuildTasks.sln", "./"]
-COPY ["./DockerfileTasks/DockerfileTasks.csproj", "./DockerfileTasks/"]
-COPY ["./Test/Test.csproj", "./Test/"]
-COPY ["./DockerfileTasks.UnitTests/DockerfileTasks.UnitTests.csproj", "./DockerfileTasks.UnitTests/"]
+
 #<<<COPY_CSPROJ<<<
 RUN dotnet restore "Test/Test.csproj"
 COPY . .

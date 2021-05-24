@@ -8,7 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DockerfileTasks" Version="1.0.19" />
+    <PackageReference Include="IM.DockerfileTasks" Version="0.1.0" />
   </ItemGroup>
+  
+  <Target Name="Test" AfterTargets="Build">
+    <Message Text="$(MSBuildRuntimeType)" Importance="high" />
+    <Message Text="$(MSBuildThisFileDirectory)" Importance="high" />
+    <Message Text="$(TaskFolder)" Importance="high" />
+    <Message Text="$(TaskAssembly)" Importance="high" />
+  </Target>
 
 </Project>
