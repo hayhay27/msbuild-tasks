@@ -75,16 +75,29 @@ namespace DockerfileTasks.DockerfileTasks.Shared.Parsers
             if (ctx.DumpProperties)
             {
                 yield return $"# CurrentDirectory: {ctx.ProjectDirectory}";
-                yield return $"# SolutionFile: {ctx.Solution.Path}";
                 yield return $"# Dockerfile: {ctx.DockerfileName}";
                 yield return $"# Context: {ctx.DockerfileContext}";
+                yield return $"# SolutionFile: {ctx.Solution.Path}";
+                foreach (var prj in ctx.Solution.Projects)
+                {
+                    yield return $"#   Project: {prj.Path}";
+                }
             }
-            
-            yield return $"COPY [\"{ctx.Solution.Path.GetPathRelativeTo(ctx.DockerfileContext)?.Replace('\\', '/')}\", \"./\"]";
+
+            var solutionDirectory = ctx.Solution.GetDirectory()!;
+            var solutionSource = ctx.Solution.Path.GetPathRelativeTo(ctx.DockerfileContext)?.Replace('\\', '/');
+            var solutionDestination = ctx.UseSolutionAsRootInContainer
+                ? "."
+                : solutionDirectory.GetPathRelativeTo(ctx.DockerfileContext)?.Replace('\\', '/');
+            yield return $"COPY [\"{solutionSource}\", \"{solutionDestination}/\"]";
             foreach (var project in ctx.Solution.Projects)
             {
                 var source = project.GetPathRelativeTo(ctx.DockerfileContext)?.Replace('\\', '/');
-                var destination = project.GetDirectory()?.GetPathRelativeTo(ctx.DockerfileContext)?.Replace('\\', '/');
+                var destination = project.GetDirectory()
+                    ?.GetPathRelativeTo(ctx.UseSolutionAsRootInContainer ? solutionDirectory : ctx.DockerfileContext)
+                    ?.Replace('\\', '/');
+                if (ctx.Exclude(source))
+                    continue;
                 yield return $"COPY [\"{source}\", \"{destination}/\"]";
             }
         }

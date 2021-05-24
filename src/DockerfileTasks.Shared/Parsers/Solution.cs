@@ -31,9 +31,7 @@ namespace DockerfileTasks.DockerfileTasks.Shared.Parsers
                     var col = x.Split('"');
                     return new Project(
                         System.IO.Path.GetFullPath(
-                            System.IO.Path.Combine(solutionDir, 
-                                col[5].Replace(System.IO.Path.AltDirectorySeparatorChar, 
-                                    System.IO.Path.DirectorySeparatorChar))));
+                            System.IO.Path.Combine(solutionDir, col[5].Replace('\\', System.IO.Path.DirectorySeparatorChar))));
                 })
                 .ToArray();
         }

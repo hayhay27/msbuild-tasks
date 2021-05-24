@@ -15,7 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Logging\LoggerExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parsers\Dockerfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parsers\Solution.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)PathExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resolvers\RootPath.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resolvers\Resolver.cs" />
   </ItemGroup>

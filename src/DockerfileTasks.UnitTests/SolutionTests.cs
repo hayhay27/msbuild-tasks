@@ -26,9 +26,9 @@ namespace DockerfileTasks.UnitTests
             
             Assert.Equal(3, solution.Projects.Count);
             Assert.Collection(solution.Projects,
-                p => Assert.Equal(Path.Combine(root, @"DockerfileTasks\DockerfileTasks.csproj"), p),
-                p => Assert.Equal(Path.Combine(root, @"SomeProject\SomeProject.csproj"), p),
-                p => Assert.Equal(Path.Combine(root, @"Test\Test.csproj"), p));
+                p => Assert.Equal(Path.Combine(root, $@"DockerfileTasks{Path.DirectorySeparatorChar}DockerfileTasks.csproj"), p),
+                p => Assert.Equal(Path.Combine(root, $@"SomeProject{Path.DirectorySeparatorChar}SomeProject.csproj"), p),
+                p => Assert.Equal(Path.Combine(root, $@"Test{Path.DirectorySeparatorChar}Test.csproj"), p));
         }
 
         private static IEnumerable<string[]> TestData()

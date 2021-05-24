@@ -4,16 +4,11 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 #>>>COPY_CSPROJ>>>
-# CurrentDirectory: /Users/hayhay/repos/msbuild-tasks/src/Test
-# SolutionFile: /Users/hayhay/repos/msbuild-tasks/src/MSBuildTasks.sln
-# Dockerfile: /Users/hayhay/repos/msbuild-tasks/src/Test/Dockerfile
-# Context: /Users/hayhay/repos/msbuild-tasks
 COPY ["./src/MSBuildTasks.sln", "./"]
-COPY ["./src/DockerfileTasks/DockerfileTasks.csproj", "./src/"]
-COPY ["./src/Test/Test.csproj", "./src/"]
-COPY ["./src/DockerfileTasks.UnitTests/DockerfileTasks.UnitTests.csproj", "./src/"]
-COPY ["./src/../build/_build.csproj", "./src/"]
-COPY ["./src/nested/NestedTest/NestedTest.csproj", "./src/"]
+COPY ["./src/DockerfileTasks/DockerfileTasks.csproj", "./DockerfileTasks/"]
+COPY ["./src/Test/Test.csproj", "./Test/"]
+COPY ["./src/DockerfileTasks.UnitTests/DockerfileTasks.UnitTests.csproj", "./DockerfileTasks.UnitTests/"]
+COPY ["./src/nested/NestedTest/NestedTest.csproj", "./nested/NestedTest/"]
 #<<<COPY_CSPROJ<<<
 RUN dotnet restore "Test/Test.csproj"
 COPY . .

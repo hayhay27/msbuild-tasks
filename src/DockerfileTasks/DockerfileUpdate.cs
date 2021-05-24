@@ -36,6 +36,8 @@ namespace DockerfileTasks
                     EndToken = EndToken,
                     Solution = solution!,
                     DockerfileContext = contextRoot!,
+                    ExcludeExpression = ExcludeExpression,
+                    UseSolutionAsRootInContainer = UseSolutionAsRootInContainer,
                     DumpProperties = DumpProperties
                 };
 
@@ -57,6 +59,8 @@ namespace DockerfileTasks
         public string EndToken { get; set; } = "#<<<COPY_CSPROJ<<<";
         public string? SolutionFile { get; set; } = default!;
         public string? DockerfileContext { get; set; } = default!;
+        public string ExcludeExpression { get; set; } = default!;
+        public bool UseSolutionAsRootInContainer { get; set; } = true;
         
         public bool DumpProperties { get; set; }
     }

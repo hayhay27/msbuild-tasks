@@ -4,6 +4,9 @@
                       StartToken="$(DockerfileStartToken)"
                       EndToken="$(DockerfileEndToken)"
                       SolutionFile="$(SolutionFile)"
-                      DockerfileContext="$(DockerfileContext)"/>
+                      DockerfileContext="$(DockerfileContext)"
+                      ExcludeExpression="$(DockerfileExcludeExpression)"
+                      UseSolutionAsRootInContainer="$(UseSolutionAsRootInContainer)"
+                      DumpProperties="$(DockerfileDump)"/>
   </Target>
 </Project>
