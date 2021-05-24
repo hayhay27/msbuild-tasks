@@ -6,7 +6,6 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <IsPackable>false</IsPackable>
         <DockerfileExcludeExpression>_build</DockerfileExcludeExpression>
-        <DockerfileDump>true</DockerfileDump>
     </PropertyGroup>
 
     <ItemGroup>
