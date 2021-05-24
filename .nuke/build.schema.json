@@ -71,7 +71,8 @@
               "Compile",
               "Pack",
               "Push",
-              "Restore"
+              "Restore",
+              "Test"
             ]
           }
         },
@@ -89,7 +90,8 @@
               "Compile",
               "Pack",
               "Push",
-              "Restore"
+              "Restore",
+              "Test"
             ]
           }
         },
