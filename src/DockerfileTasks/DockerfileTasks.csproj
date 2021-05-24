@@ -3,9 +3,17 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
-    <Version>1.0.19</Version>
+    <Version>0.1.0</Version>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
+    
+    <PackageProjectUrl>https://github.com/hayhay27/msbuild-tasks</PackageProjectUrl>
+    <PackageTags>msbuild;docker;dockerfile</PackageTags>
+    <PackageId>IM.DockerfileTasks</PackageId>
+    <Authors>Ivanyuk Maksim</Authors>
+    <Description>MSBuild task for restore stage generation</Description>
+    <RepositoryUrl>https://github.com/hayhay27/msbuild-tasks.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
