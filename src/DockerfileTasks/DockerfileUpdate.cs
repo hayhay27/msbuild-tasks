@@ -49,8 +49,8 @@ namespace DockerfileTasks
             }
             catch (Exception e)
             {
-                logger.LogError(e);
-                return false;
+                logger.LogWarning(e);
+                return true;
             }
         }
 
