@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="IM.DockerfileTasks" Version="0.1.8" />
+      <PackageReference Include="IM.DockerfileTasks" Version="0.1.9" />
     </ItemGroup>
 
 </Project>
